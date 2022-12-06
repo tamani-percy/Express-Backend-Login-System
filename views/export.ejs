@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UNZA Samba Manja</title>
+    <link rel="stylesheet" href="/CSS/main.css" />
+    <link rel="stylesheet" href="/CSS/export.css" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <div class="logo-name">
+        <div class="logo-image">
+          <img src="/Admin Dashboard Panel/" alt="" />
+        </div>
+        <span class="logo_name"
+          >UNZA <br />
+          Samba Manja</span
+        >
+      </div>
+      <div class="menu-items">
+        <ul class="nav-links">
+          <li>
+            <a href="/home">
+              <i class="uil uil-estate"></i>
+              <span class="link-name">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="/charts">
+              <i class="uil uil-chart-pie"></i>
+              <span class="link-name">Charts</span>
+            </a>
+          </li>
+          <li>
+            <a href="/recents">
+              <i class="uil uil-analytics"></i>
+              <span class="link-name">Recents</span>
+            </a>
+          </li>
+          <li>
+            <a href="/remote">
+              <i class="uil uil-sliders-v-alt"></i>
+              <span class="link-name">Remote Management</span>
+            </a>
+          </li>
+          <li>
+            <a href="/export">
+              <i class="uil uil-file-export"></i>
+              <span class="link-name">Export</span>
+            </a>
+          </li>
+          <li>
+            <a href="/logout">
+              <i class="uil uil-signout"></i>
+              <span class="link-name">Logout</span>
+            </a>
+          </li>
+        </ul>
+        <ul class="logout-mode">
+          <li class="mode">
+            <a href="#">
+              <i class="uil uil-moon"></i>
+              <span class="link-name">Dark Mode</span>
+            </a>
+
+            <div class="mode-toggle">
+              <span class="switch"></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Dashboard -->
+    <section class="dashboard">
+      <div class="top">
+        <i class="uil uil-bars sidebar-toggle"></i>
+      </div>
+      <div class="export">
+        <div class="wrapper">
+          <h1>Mask status report</h1>
+          <label for="slct" class="select">
+            <select name="" id="slct" required="required">
+              <option value="" disabled="disabled" selected="selected">
+                Select date
+              </option>
+              <option value="#">Today</option>
+              <option value="#">This Week</option>
+              <option value="#">This Month</option>
+            </select>
+          </label>
+          <label for="slct" class="select">
+            <select name="" id="slct" required="required">
+              <option value="" disabled="disabled" selected="selected">
+                Select mask status
+              </option>
+              <option value="#">Correctly masked</option>
+              <option value="#">Not masked</option>
+              <option value="#">Incorrectly masked</option>
+            </select>
+          </label>
+          <button type="submit">Export as xlsx</button>
+        </div>
+
+        <div class="wrapper">
+          <h1>User rate report</h1>
+          <label for="slct" class="select">
+            <select name="" id="slct" required="required">
+              <option value="" disabled="disabled" selected="selected">
+                Select date
+              </option>
+              <option value="#">Today</option>
+              <option value="#">This Week</option>
+              <option value="#">This Month</option>
+            </select>
+          </label>
+          <button type="submit">Export as xlsx</button>
+        </div>
+        <div class="wrapper">
+          <h1>Temperature rate report</h1>
+          <label for="slct" class="select">
+            <select name="" id="slct" required="required">
+              <option value="" disabled="disabled" selected="selected">
+                Select date
+              </option>
+              <option value="#">Today</option>
+              <option value="#">This Week</option>
+              <option value="#">This Month</option>
+            </select>
+          </label>
+          <label for="slct" class="select">
+            <select name="" id="slct" required="required">
+              <option value="" disabled="disabled" selected="selected">
+                Select temperature range
+              </option>
+              <option value="#">Above normal</option>
+              <option value="#">Normal</option>
+              <option value="#">Below normal</option>
+            </select>
+          </label>
+          <button type="submit">Export as xlsx</button>
+        </div>
+      </div>
+    </section>
+    <script type="text/javascript" src="/JS/main.js"></script>
+  </body>
+</html>

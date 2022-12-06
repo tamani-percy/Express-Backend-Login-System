@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <link rel="stylesheet" href="/CSS/charts.css" />
+    <link rel="stylesheet" href="/CSS/loading-bar.css" />
+    <link rel="stylesheet" href="/CSS/dashboard.css">
+    <link rel="stylesheet" href="/CSS/recents.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/imagehover.css/2.0.0/css/imagehover.min.css">
+    <link rel="stylesheet" href="/node_modules/imagehover.css/css/imagehover.min.css">
+
+    <title>UNZA Samba Manja</title>
+  </head>
+  <script type="text/javascript" src="/JS/loading-bar.js"></script>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <div class="logo-name">
+        <div class="logo-image">
+          <img src="/Admin Dashboard Panel/" alt="" />
+        </div>
+        <span class="logo_name"
+          >UNZA <br />
+          Samba Manja</span
+        >
+      </div>
+      <div class="menu-items">
+        <ul class="nav-links">
+          <li>
+            <a href="/home">
+              <i class="uil uil-estate"></i>
+              <span class="link-name">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="/charts">
+              <i class="uil uil-chart-pie"></i>
+              <span class="link-name">Charts</span>
+            </a>
+          </li>
+          <li>
+            <a href="/recents">
+              <i class="uil uil-analytics"></i>
+              <span class="link-name">Recents</span>
+            </a>
+          </li>
+          <li>
+            <a href="/remote">
+              <i class="uil uil-sliders-v-alt"></i>
+              <span class="link-name">Remote Management</span>
+            </a>
+          </li>
+          <li>
+            <a href="/export">
+              <i class="uil uil-file-export"></i>
+              <span class="link-name">Export</span>
+            </a>
+          </li>
+          <li>
+            <a href="/logout">
+              <i class="uil uil-signout"></i>
+              <span class="link-name">Logout</span>
+            </a>
+          </li>
+        </ul>
+        <ul class="logout-mode">
+          <li class="mode">
+            <a href="#">
+              <i class="uil uil-moon"></i>
+              <span class="link-name">Dark Mode</span>
+            </a>
+
+            <div class="mode-toggle">
+              <span class="switch"></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Dashboard -->
+    <section class="dashboard">
+      <div class="top">
+        <i class="uil uil-bars sidebar-toggle"></i>
+      </div>
+
+      <div class="dash-content">
+        <div class="overview">
+          <div class="title">
+            <i class="uil uil-tachometer-fast-alt">Dashboard</i>
+          </div>
+
+          <div class="boxes">
+            <div class="box box1">
+              <i class="uil uil-hourglass"></i>
+
+              <span class="text">Visits today</span>
+              <span class="number">50</span>
+            </div>
+            <div class="box box2">
+              <i class="uil uil-clock"></i>
+              <span class="text">Visits this week</span>
+              <span class="number">20</span>
+            </div>
+            <div class="box box3">
+              <i class="uil uil-calender"></i>
+              <span class="text">Visits this month</span>
+              <span class="number">200</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Activity -->
+        <div class="activity">
+          <div class="title">
+            <div class="text-heading">
+              <i class="uil uil-clock-three" style="margin: 0 -25px;"> Recents</i>
+              <a class="activity-title" href="/recents">View all</a>
+            </div>
+           
+            </div>
+            <div class="table-container">
+              <table class="ana-table" style="border-collapse: collapse ;">
+                <thead>
+                  <tr>
+                    <th><i class="uil uil-user"><br> User</i></th>
+                    <th><i class="uil uil-head-side-mask"><br> Mask</i></th>
+                    <th><i class="uil uil-water"><br> Sanitiser Type</i></th>
+                    <th><i class="uil uil-thermometer"><br> Temperature (℃)</i></th>
+                    <th><i class="uil uil-watch"><br> Timestamp</i></th>
+                  </tr>
+    
+                </thead>
+               
+                <tbody>
+                  <tr>
+                    <td class="user-face">
+                      <img src="/Images/IMG-20220307-WA0007.jpg" alt="" />
+                    </td>
+                    <td class="user-mask">
+                      <figure class="imghvr-push-up">
+                        <img src="/Images/Symbols/mask.png"> <br>
+                        <figcaption>Correctly masked</figcaption>
+                      </figure>
+                    </td>
+  
+                    <td class="user-hands">
+                      <figure class="imghvr-push-up">
+                        <img src="/Images/Symbols/soap.png">
+                        <figcaption>Hand Soap</figcaption>
+                      </figure>
+                      <br>
+                      <figure class="imghvr-push-up">
+                      <img src="/Images/Symbols/water.png" alt="">
+                      <figcaption>Water</figcaption>
+                      </figure>
+                    </td>
+                    <td class="user-temp">
+                      <!-- <div class="ldBar" data-value="50"> </div> -->
+  
+                      <div id="myItem1" data-preset="energy" data-precision="0.01" data-max="40" data-min="35" data-stroke-width="40"> </div>
+                      <script >
+                        /* construct manually */
+                        var bar1 = new ldBar("#myItem1");
+                        /* ldBar stored in the element */
+                        var bar2 = document.getElementById("myItem1").ldBar;
+                        bar1.set(35);
+                      </script>
+                    </td>
+                    <td class="user-time">
+                      <h4>
+                        09:42:54 <br />
+                        12/07/2022
+                    </h4>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="user-face">
+                      <img src="/Images/IMG-20220307-WA0007.jpg" alt="" />
+                    </td>
+                    <td class="user-mask">
+                      <figure class="imghvr-push-up">
+                        <img src="/Images/Symbols/nomask.png">
+                        <figcaption>Not masked</figcaption>
+                      </figure>
+                    </td>
+  
+                    <td class="user-hands">
+                      <figure class="imghvr-push-up">
+                        <img src="/Images/Symbols/sanitiser.png">
+                        <figcaption>Hand sanitiser</figcaption>
+                      </figure>
+                    </td>
+                    <td class="user-temp">
+                      <!-- <div class="ldBar" data-value="50"> </div> -->
+  
+                      <div data-stroke-width="40" id="myItem2" data-preset="energy" data-precision="0.01" data-max="40" data-min="35"> </div>
+                      <script >
+                        /* construct manually */
+                        var bar1 = new ldBar("#myItem2");
+                        /* ldBar stored in the element */
+                        var bar2 = document.getElementById("myItem2").ldBar;
+                        bar1.set(36.8);
+                      </script>
+                      </script>
+                    </td>
+                    <td class="user-time">
+                      <h4>
+                        09:42:54 <br />
+                        12/07/2022
+                    </h4>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="user-face">
+                      <img src="/Images/IMG-20220307-WA0007.jpg" alt="" />
+                    </td>
+                    <td class="user-mask">
+                      <figure class="imghvr-push-up">
+                        <img src="/Images/Symbols/nomask.png">
+                        <figcaption>Not masked</figcaption>
+                      </figure>
+                    </td>
+  
+                    <td class="user-hands">
+                      <figure class="imghvr-push-up">
+                        <img src="/Images/Symbols/sanitiser.png">
+                        <figcaption>Hand sanitiser</figcaption>
+                      </figure>
+                    </td>
+                    <td class="user-temp">
+                     <!-- <div class="ldBar" data-value="50"> </div> -->
+  
+                     <div data-stroke-width="40" id="myItem3" data-preset="energy" data-precision="0.01" data-max="40" data-min="35"> </div>
+                     <script >
+                       /* construct manually */
+                       var bar1 = new ldBar("#myItem3");
+                       /* ldBar stored in the element */
+                       var bar2 = document.getElementById("myItem3").ldBar;
+                       bar1.set(37.2);
+                     </script>
+                      </script>
+                    </td>
+                    <td class="user-time">
+                      <h4>
+                        09:42:54 <br />
+                        12/07/2022
+                      </h4>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="user-face">
+                      <img src="/Images/IMG-20220307-WA0007.jpg" alt="" />
+                    </td>
+                    <td class="user-mask">
+                      <figure class="imghvr-push-up">
+                        <img src="/Images/Symbols/badmask.png">
+                        <figcaption>Incorrectly Masked</figcaption>
+                      </figure>
+                    </td>
+  
+                    <td class="user-hands">
+                      <figure class="imghvr-push-up">
+                        <img src="/Images/Symbols/sanitiser.png">
+                        <figcaption>Hand sanitiser</figcaption>
+                      </figure>
+                    </td>
+                    <td class="user-temp">
+                     <!-- <div class="ldBar" data-value="50"> </div> -->
+  
+                     <div data-stroke-width="40" id="myItem4" data-preset="energy" data-precision="0.01" data-max="40" data-min="35"> </div>
+                     <script >
+                       /* construct manually */
+                       var bar1 = new ldBar("#myItem4");
+                       /* ldBar stored in the element */
+                       var bar2 = document.getElementById("myItem4").ldBar;
+                       bar1.set(36.4);
+                     </script>
+                      </script>
+                    </td>
+                    <td class="user-time">
+                      <h4>
+                        09:42:54 <br />
+                        12/07/2022
+                      </h4>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <script type="text/javascript" src="/JS/main.js"></script>
+  
+  </body>
+</html>

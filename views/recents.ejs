@@ -1,0 +1,143 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UNZA Samba Manja</title>
+
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <link rel="stylesheet" href="/CSS/main.css">
+    <link rel="stylesheet" href="/CSS/charts.css" />
+    <link rel="stylesheet" href="/CSS/recents-main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/imagehover.css/2.0.0/css/imagehover.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <link rel="stylesheet" href="/node_modules/imagehover.css/css/imagehover.min.css">
+  <style>
+    table,
+    th,
+    td {
+      padding: 1.8rem;
+    }
+  </style>
+    <script type="text/javascript" src="/JS/loading-bar.js"></script>
+  </head>
+  <body>
+    <nav>
+      <div class="logo-name">
+        <div class="logo-image"></div>
+        <span class="logo_name"
+          >UNZA <br />
+          Samba Manja</span
+        >
+      </div>
+      <div class="menu-items">
+        <ul class="nav-links">
+          <li>
+            <a href="/home">
+              <i class="uil uil-estate"></i>
+              <span class="link-name">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="/charts">
+              <i class="uil uil-chart-pie"></i>
+              <span class="link-name">Charts</span>
+            </a>
+          </li>
+          <li>
+            <a href="/recents">
+              <i class="uil uil-analytics"></i>
+              <span class="link-name">Recents</span>
+            </a>
+          </li>
+          <li>
+            <a href="/remote">
+              <i class="uil uil-sliders-v-alt"></i>
+              <span class="link-name">Remote Management</span>
+            </a>
+          </li>
+          <li>
+            <a href="/export">
+              <i class="uil uil-file-export"></i>
+              <span class="link-name">Export</span>
+            </a>
+          </li>
+          <li>
+            <a href="/profile">
+              <i class="uil uil-user"></i>
+              <span class="link-name">Profile</span>
+            </a>
+          </li>
+          <li>
+            <a href="/logout">
+              <i class="uil uil-signout"></i>
+              <span class="link-name">Logout</span>
+            </a>
+          </li>
+        </ul>
+        <ul class="logout-mode">
+          <li class="mode">
+            <a href="#">
+              <i class="uil uil-moon"></i>
+              <span class="link-name">Dark Mode</span>
+            </a>
+
+            <div class="mode-toggle">
+              <span class="switch"></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <section class="dashboard">
+      <div class="top">
+        <i class="uil uil-bars sidebar-toggle"></i>
+      </div>
+      <div class="title">
+        <i class="uil uil-comparison">Charts</i>   
+        <div class="content">
+          <button>Today</button>
+          <button>This Week</button>
+          <button>This Month</button>
+        </div>    
+       
+      </div>
+      <div class="activity">
+          <div class="table-container">
+            <table class="ana-table" style="border-collapse: collapse ;">
+                <tr>
+                  <th><i class="uil uil-user"><br> User</i></th>
+                  <th><i class="uil uil-head-side-mask"><br> Mask</i></th>
+                  <th><i class="uil uil-water"><br> Sanitiser Type</i></th>
+                  <th><i class="uil uil-thermometer"><br> Temperature (℃)</i></th>
+                  <th><i class="uil uil-watch"><br> Timestamp</i></th>
+                </tr>
+              <% if(userData.length!=0){ var i=1; userData.forEach(function(data){ %>
+              <tr>
+                <td>
+                  <img src="" id="user-face" alt="">
+                </td>
+                <td></td>
+                <td><%=data.sanitiser %></td>
+                <td><%=data.temp %></td>
+                <td><%=data.time %></td>
+              </tr>
+              <% i++; }) %> <% } else{ %>
+              <tr>
+                <td colspan="7">No Data Found</td>
+              </tr>
+              <% } %>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://github.com/kimmobrunfeldt/progressbar.js/blob/master/dist/progressbar.js"></script>
+    <script src="/JS/main.js"></script>
+      <script type="text/javascript" src="/JS/loading-bar.js"></script>
+  </body>
+</html>

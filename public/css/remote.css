@@ -1,0 +1,470 @@
+:root {
+  /* ===== Colors ===== */
+  --primary-color: #135796;
+  --secondary-color: #05a855;
+  --tertiary-color: #fe0000;
+  --other-color: #ffaa00;
+  --panel-color: #fff;
+  --text-color: white;
+  --black-light-color: #707070;
+  --border-color: #e6e5e5;
+  --toggle-color: #ddd;
+  --box1-color: rgb(77, 163, 255);
+  --box2-color: #ffe6ac;
+  --box3-color: #e7d1fc;
+  --title-icon-color: #fff;
+
+  /* ====== Transition ====== */
+  --tran-05: all 0.5s ease;
+  --tran-03: all 0.3s ease;
+  --tran-03: all 0.2s ease;
+}
+
+.remote-control {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 100px;
+}
+
+.remote {
+  background-color: rgba(5, 168, 85, 0.2);
+  border-radius: 12px;
+}
+
+.remote h1 {
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+table i {
+  text-align: justify;
+  font-size: 1.2rem;
+}
+
+.remote,
+.water,
+.battery {
+  padding: 2rem;
+}
+
+.remote {
+  height: 650px;
+  width: 400px;
+}
+.water {
+  height: 650px;
+  width: 550px;
+}
+
+/* Toggle */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-left: 15rem;
+  margin-top: -2rem;
+}
+
+label {
+  float: right;
+  margin: 0 50px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: green;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--secondary-color);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--secondary-color);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider {
+  border-radius: 34px;
+}
+
+.slider:before {
+  border-radius: 50%;
+}
+
+td {
+  padding: 1rem 0;
+}
+/* Water Levels */
+.water {
+  background-color: rgba(19, 87, 150, 0.6);
+  border-radius: 12px;
+  width: 455px;
+  height: 650px;
+}
+
+.water h1 {
+  text-align: center;
+}
+.ldBar {
+  margin-top: 2rem;
+  position: relative;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.ldBar.label-center > .ldBar-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-shadow: 0 0 3px #fff;
+}
+.ldBar-label:after {
+  content: "ɭ";
+  display: inline;
+}
+.ldBar.no-percent .ldBar-label:after {
+  content: "";
+}
+
+/* Battery  */
+.battery {
+  width: 500px;
+  height: 650px;
+  background-color: rgb(5, 168, 85, 0.6);
+  border-radius: 22px;
+  text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+  nav {
+    width: 50px;
+  }
+
+  .top i {
+    margin-left: -10px;
+  }
+  .top input:focus {
+    width: 220px;
+  }
+
+  .remote-control {
+    display: flex;
+    flex-direction: column;
+    margin-left: -6.5rem;
+  }
+
+  nav .logo-image {
+    background: url("/Images/UNZA logo.png");
+    background-size: cover;
+    margin-left: -10px;
+    width: 20px;
+    height: 60px;
+  }
+
+  nav li {
+    margin-left: -15px;
+  }
+  .remote h1 {
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 40px;
+  }
+
+  table i {
+    margin-left: -2rem;
+    font-size: 0.8rem;
+    padding: 0rem 1rem;
+  }
+
+  .remote {
+    margin-top: -3rem;
+    margin-bottom: 2rem;
+    width: 280px;
+    height: 600px;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-left: 10rem;
+    margin-top: -2rem;
+  }
+
+  td {
+    border-bottom: none;
+  }
+  .water {
+    background-color: rgba(19, 87, 150, 0.6);
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    width: 280px;
+    height: 600px;
+  }
+  .water h1 {
+    text-align: center;
+  }
+  .battery {
+    margin-bottom: 2rem;
+    width: 280px;
+    height: 600px;
+    background-color: rgb(5, 168, 85, 0.6);
+    border-radius: 22px;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1025px) {
+  nav {
+    width: 200px;
+  }
+  .top i {
+    margin-left: -10px;
+  }
+  .top input:focus {
+    width: 220px;
+  }
+
+  nav li {
+    margin-left: -10px;
+  }
+  .remote h1 {
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 40px;
+  }
+
+  table i {
+    margin-left: -2rem;
+    font-size: 1rem;
+  }
+
+  .remote-switch {
+    padding: 0rem 1rem;
+  }
+
+  .remote-control {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .remote {
+    margin-bottom: 2rem;
+    width: 320px;
+    height: 600px;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-left: 10rem;
+    margin-top: -2rem;
+  }
+
+  td {
+    border-bottom: none;
+  }
+  .water {
+    background-color: rgba(19, 87, 150, 0.6);
+    border-radius: 12px;
+    width: 500px;
+    height: 600px;
+  }
+  .water h1 {
+    text-align: center;
+  }
+  .battery {
+    width: 500px;
+    height: 650px;
+    background-color: rgb(5, 168, 85, 0.6);
+    border-radius: 22px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  nav {
+    width: 180px;
+  }
+
+  .top i {
+    margin-left: -10px;
+  }
+  .top input:focus {
+    width: 220px;
+  }
+
+  nav li {
+    margin-left: -10px;
+  }
+  .remote h1 {
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 40px;
+  }
+
+  table i {
+    margin-left: -2rem;
+    font-size: 0.8rem;
+  }
+
+  .remote-control {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 2rem;
+  }
+
+  .remote-switch {
+    padding: 0rem 1rem;
+  }
+
+  .remote {
+    margin-right: 8.5rem;
+    width: 280px;
+    height: 600px;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-left: 10rem;
+    margin-top: -2rem;
+  }
+
+  td {
+    border-bottom: none;
+  }
+  .water {
+    margin-right: 8.5rem;
+    background-color: rgba(19, 87, 150, 0.6);
+    border-radius: 12px;
+    width: 400px;
+    height: 600px;
+  }
+  .water h1 {
+    text-align: center;
+  }
+  .battery {
+    margin-top: 2rem;
+    margin-right: 8.5rem;
+    width: 280px;
+    height: 650px;
+    background-color: rgb(5, 168, 85, 1);
+    border-radius: 22px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 768px) and (min-width: 481px) {
+  nav {
+    width: 60px;
+  }
+
+  .top i {
+    margin-left: -10px;
+  }
+  .top input:focus {
+    width: 220px;
+  }
+
+  nav li {
+    margin-left: -10px;
+  }
+  .remote h1 {
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 40px;
+  }
+
+  table i {
+    margin-left: -2rem;
+    font-size: 0.8rem;
+  }
+
+  .remote-switch {
+    padding: 0rem 1rem;
+  }
+
+  .remote {
+    margin-left: 3rem;
+    margin-bottom: 2rem;
+    width: 300px;
+    height: 580px;
+  }
+
+  .remote-control {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-left: 10rem;
+    margin-top: -2rem;
+  }
+
+  td {
+    border-bottom: none;
+  }
+  .water {
+    margin-right: 8.5rem;
+    background-color: rgba(19, 87, 150, 0.6);
+    border-radius: 12px;
+    width: 400px;
+    height: 600px;
+    margin-bottom: 2rem;
+  }
+  .water h1 {
+    text-align: center;
+  }
+  .battery {
+    margin-right: 8.5rem;
+    width: 400px;
+    height: 650px;
+    background-color: rgb(5, 168, 85, 0.6);
+    border-radius: 22px;
+    text-align: center;
+  }
+}

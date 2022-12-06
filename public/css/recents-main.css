@@ -1,0 +1,447 @@
+.activity table {
+  width: 100%;
+}
+
+.activity {
+  margin: 2rem 0rem;
+}
+
+table {
+  margin: 2rem 0rem;
+  background: whitesmoke;
+}
+
+table thead {
+  color: white;
+  background: #05a855;
+}
+
+.title {
+  display: inline-block;
+  display: flex;
+  justify-content: space-between;
+}
+
+.table-container {
+  height: 100vh;
+  z-index: 1000;
+}
+
+.text-heading {
+  margin-left: 2.5rem;
+}
+
+.text-heading i {
+  text-decoration: none;
+  font-weight: 600;
+  color: black;
+  text-transform: uppercase;
+}
+
+.text-heading {
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 11rem;
+}
+.text-heading a:hover {
+  color: grey;
+  font-size: 1rem;
+}
+.activity-title {
+  float: right;
+}
+
+#myItem1 path.mainline,
+#myItem2 path.mainline {
+  stroke-width: 100;
+  content: "℃";
+}
+#myItem1 path.mainline,
+#myItem2 path.mainline {
+  stroke-width: 100;
+}
+
+.user-hands img {
+  width: 90px;
+  height: 90px;
+}
+.user-face img {
+  border-radius: 100px;
+  width: 150px;
+  height: 150px;
+}
+
+.ana-table td {
+  text-align: center;
+  padding: 1rem 0;
+  margin: 2rem;
+}
+
+.ana-table th {
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-bottom: 10px solid white;
+  cursor: default;
+}
+
+.user-time {
+  cursor: default;
+}
+.user-temp div {
+  font-size: 1.5rem;
+}
+
+.user-mask img {
+  width: 100px;
+  height: 100px;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+.user-mask figure {
+  margin-left: 0.2rem;
+  font-size: 0.9rem;
+  width: 230px;
+  cursor: pointer;
+  background: whitesmoke;
+}
+.user-hands figure {
+  width: 230px;
+  margin: 0.5rem 0;
+  cursor: pointer;
+  background-color: whitesmoke;
+}
+
+figcaption {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+figcaption:nth-child(3),
+figcaption:nth-child(2) {
+  margin-left: -10px;
+}
+figcaption:nth-child(6) {
+  margin-left: -100px;
+}
+
+.ldBar {
+  display: inline;
+}
+.ldBar.label-center > .ldBar-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-shadow: 0 0 3px #fff;
+}
+.ldBar-label:after {
+  content: " ℃";
+  font-size: 1.5rem;
+}
+.ldBar.no-percent .ldBar-label:after {
+  content: "";
+}
+
+.ldBar-label {
+  margin-top: -70px;
+  margin-bottom: 50px;
+}
+
+/* Collapsible */
+
+button {
+  background-color: #05a855;
+  margin: 0rem 0.2rem;
+  cursor: pointer;
+  transition: ease-in-out 0.4s;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  padding: 1rem 1rem;
+  border-radius: 50px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(5, 130, 85);
+}
+button:focus {
+  border: 5px solid darkgreen;
+  padding: 1rem 1.4rem;
+}
+.content {
+  display: none;
+  display: inline;
+  overflow: hidden;
+}
+.content i {
+  float: right;
+  margin-top: 1rem;
+  padding-left: 2rem;
+  margin-right: 10px;
+  color: grey;
+}
+
+.month-input {
+  border: 1px solid #ffaa00;
+  border-radius: 12px;
+  text-align: center;
+  height: 25px;
+}
+.month-input:focus {
+  border: 2px solid #ffaa00;
+  outline: none;
+}
+.month-input:hover {
+  background-color: rgb(128, 150, 128, 0.1);
+  outline: none;
+}
+.collapsible {
+  cursor: pointer;
+  transition: ease-in-out 0.4s;
+}
+
+.title i {
+  margin-top: 10px;
+  margin-left: -1px;
+  user-select: none;
+}
+
+@media screen and (min-width: 1025px) {
+  .user-face img {
+    width: 120px;
+    height: 120px;
+    margin-left: 10px;
+  }
+
+  .ldBar-label {
+    padding-top: 20px;
+  }
+}
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  .user-face img {
+    width: 120px;
+    height: 120px;
+    margin-left: 10px;
+  }
+  .title {
+    text-align: justify;
+  }
+  .ldBar-label {
+    padding-top: 25px;
+  }
+
+  button {
+    background-color: #05a855;
+    cursor: pointer;
+    transition: ease-in-out 0.4s;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    font-weight: bold;
+    border: none;
+    padding: 1rem 1.4rem;
+    border-radius: 50px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    display: flex;
+    margin-top: 0.2rem;
+  }
+
+  button:nth-child(1) {
+    margin-left: 10px;
+  }
+  button:nth-child(2) {
+    margin-left: 5px;
+  }
+  button:nth-child(3) {
+    margin-left: 5px;
+  }
+  button:nth-child(4) {
+    margin-left: 5px;
+  }
+
+  .collapsible {
+    width: 90px;
+    margin-right: 10rem;
+  }
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+  }
+
+  .content {
+    display: flex;
+  }
+}
+@media screen and (max-width: 768px) and (min-width: 481px) {
+  .user-face img {
+    width: 120px;
+    height: 120px;
+    margin-left: 10px;
+  }
+
+  .ldBar-label {
+    padding-top: 25px;
+  }
+
+  .user-mask figure {
+    width: 200px;
+  }
+  .user-hands figure {
+    width: 200px;
+  }
+  .title {
+    text-align: justify;
+  }
+
+  button {
+    background-color: #05a855;
+    cursor: pointer;
+    transition: ease-in-out 0.4s;
+    text-align: center;
+    display: inline-block;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    font-weight: bold;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    display: flex;
+
+    margin-top: 0.2rem;
+  }
+
+  button:nth-child(1) {
+    margin-left: 10px;
+  }
+  button:nth-child(2) {
+    margin-left: 5px;
+  }
+  button:nth-child(3) {
+    margin-left: 5px;
+  }
+  button:nth-child(4) {
+    margin-left: 5px;
+  }
+
+  .dashboard {
+    margin-left: -70px;
+  }
+  .collapsible {
+    width: 90px;
+    margin-right: 10rem;
+  }
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+  }
+
+  .content {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .title {
+    text-align: justify;
+  }
+
+  .title i:nth-child(1) {
+    padding-bottom: 2rem;
+  }
+  .ldBar-label {
+    padding-top: 25px;
+  }
+
+  button:focus {
+    border: 5px solid darkgreen;
+    padding: 1rem 1.1rem;
+  }
+
+  .user-face img {
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
+  }
+
+  .user-hands figure {
+    width: 150px;
+  }
+  .user-mask figure {
+    width: 150px;
+  }
+
+  button {
+    display: flex;
+    background-color: #05a855;
+    cursor: pointer;
+    transition: ease-in-out 0.4s;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    font-weight: bold;
+    border: none;
+    padding: 1rem 1.4rem;
+    border-radius: 50px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin-top: 0.2rem;
+  }
+
+  button:nth-child(1) {
+    margin-left: 10px;
+  }
+  button:nth-child(2) {
+    margin-left: 5px;
+  }
+  button:nth-child(3) {
+    margin-left: 5px;
+  }
+  button:nth-child(4) {
+    margin-left: 5px;
+  }
+
+  .dashboard {
+    margin-left: -70px;
+  }
+
+  .content i {
+    display: flex;
+    margin-left: -30px;
+  }
+
+  .collapsible {
+    width: 90px;
+    margin-right: 10rem;
+  }
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+  }
+}

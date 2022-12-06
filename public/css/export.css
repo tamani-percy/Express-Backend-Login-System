@@ -1,0 +1,83 @@
+/* Dropdown */
+.select svg {
+  position: absolute;
+  fill: none;
+  pointer-events: none;
+}
+
+.select select {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.select select option[value=""][disabled] {
+  display: none;
+}
+
+.select select:focus {
+  transition: 0.2s ease-in-out;
+  outline: none;
+  border: 2px solid green;
+}
+
+select {
+  color: green;
+  border-radius: 3px;
+  padding: 12px;
+  width: fit-content;
+  border: 1px solid #e8eaed;
+  font-size: 16px;
+}
+
+label {
+  margin: 3rem 0rem;
+}
+
+option [value=""] [disabled] {
+  display: none;
+}
+
+/* Flexbox */
+.export {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.dashboard {
+  top: 100px;
+}
+
+.wrapper {
+  background-color: rgb(255, 170, 0, 0.5);
+  width: fit-content;
+  align-items: center;
+  display: flex;
+  border-radius: 12px;
+  padding: 1rem 5rem 5rem;
+  flex-direction: column;
+  margin: 2rem;
+}
+.wrapper:nth-child(2) button {
+  margin-top: 14.3rem;
+}
+
+button {
+  font-weight: bold;
+  margin-top: 5rem;
+  text-transform: uppercase;
+  border-radius: 50px 50px;
+  font-size: 1.2rem;
+  display: inline-block;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background-color: green;
+}
+
+button:hover {
+  background-color: darkgreen;
+}

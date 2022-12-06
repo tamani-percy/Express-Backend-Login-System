@@ -1,0 +1,499 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UNZA Samba Manja</title>
+    <link rel="stylesheet" href="/CSS/charts.css" />
+    <link rel="stylesheet" href="/CSS/main.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+  </head>
+
+  <body>
+    <nav>
+      <div class="logo-name">
+        <div class="logo-image"></div>
+        <span class="logo_name"
+          >UNZA <br />
+          Samba Manja</span
+        >
+      </div>
+      <div class="menu-items">
+        <ul class="nav-links">
+          <li>
+            <a href="/home">
+              <i class="uil uil-estate"></i>
+              <span class="link-name">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="/charts">
+              <i class="uil uil-chart-pie"></i>
+              <span class="link-name">Charts</span>
+            </a>
+          </li>
+          <li>
+            <a href="/recents">
+              <i class="uil uil-analytics"></i>
+              <span class="link-name">Recents</span>
+            </a>
+          </li>
+          <li>
+            <a href="/remote">
+              <i class="uil uil-sliders-v-alt"></i>
+              <span class="link-name">Remote Management</span>
+            </a>
+          </li>
+          <li>
+            <a href="/export">
+              <i class="uil uil-file-export"></i>
+              <span class="link-name">Export</span>
+            </a>
+          </li>
+          <li>
+            <a href="/profile">
+              <i class="uil uil-user"></i>
+              <span class="link-name">Profile</span>
+            </a>
+          </li>
+          <li>
+            <a href="/logout">
+              <i class="uil uil-signout"></i>
+              <span class="link-name">Logout</span>
+            </a>
+          </li>
+        </ul>
+        <ul class="logout-mode">
+          <li class="mode">
+            <a href="#">
+              <i class="uil uil-moon"></i>
+              <span class="link-name">Dark Mode</span>
+            </a>
+
+            <div class="mode-toggle">
+              <span class="switch"></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <section class="dashboard">
+      <div class="top">
+        <i class="uil uil-bars sidebar-toggle"></i>
+      </div>
+      <div class="title">
+        <i class="uil uil-comparison">Charts</i>
+      </div>
+
+      <div class="container" style="display: flex; flex-direction: row; flex-wrap: wrap; margin: 20px 0px;" >
+        <div
+          class="containerinside"
+          style="display: flex; flex-direction: column; flex-wrap: wrap;width: fit-content;"
+          
+        >
+          <div style="width: 35vw;">
+            <h2>Mask status (Overall)</h2>
+            <canvas id="myChart"></canvas>
+          </div>
+          <div style="width: 35vw;">
+            <h2>Mask status (Correctly worn)</h2>
+            <canvas id="maskonChart"></canvas>
+          </div>
+          <div style="width: 35vw;">
+            <h2>Mask status (Unmasked worn)</h2>
+            <canvas id="maskoffChart"></canvas>
+          </div>
+          <div style="width: 35vw;">
+            <h2>Mask status (Incorrectly worn)</h2>
+            <canvas id="maskishChart"></canvas>
+          </div>
+          </div>
+        <div
+          class="containerinside2"
+          style="display: flex; flex-direction: column; flex-wrap: wrap; width: fit-content ; height: fit-content;"
+        >
+          <div  style="width: 35vw;">
+            <h2>User rate (Overall)</h2>
+            <canvas id="userChart"></canvas>
+          </div>
+          <div style="width: 35vw;">
+            <h2>User rate (Time of day)</h2>
+            <canvas id="usertimeChart"></canvas>
+          </div>
+          
+          </div>
+        </div>
+        <div
+          class="containerinside3"
+          style="display: flex; flex-direction: column; flex-wrap: wrap; width: fit-content ; height: fit-content;"
+        >
+          <div style="width: 35vw;">
+            <h2>Water usage (Overall)</h2>
+            <canvas id="waterChart"></canvas>
+          </div>
+          <div style="width: 35vw;">
+            <h2>Water usage (Time of day)</h2>
+            <canvas id="watertimeChart"></canvas>
+          </div>
+          
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+    <script>
+      // Masks
+      const ctx = document.getElementById("myChart").getContext("2d");
+      const myChart = new Chart(ctx, {
+        type: "pie",
+        data: {
+          labels: ["Correctly Masked", "Incorrectly Masked", "Not masked"],
+          datasets: [
+            {
+              data: [12, 19, 3],
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.8)",
+                "rgba(54, 162, 235, 0.8)",
+                "rgba(192, 23, 235, 0.8)",
+              ],
+              borderColor: [
+                "rgba(255, 99, 132, 0.8)",
+                "rgba(54, 162, 235, 0.8)",
+                "rgba(192, 23, 235, 0.8)",
+              ],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+      const maskon = document.getElementById("maskonChart").getContext("2d");
+      const maskonChart = new Chart(maskon, {
+        type: "line",
+        data: {
+          labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          datasets: [
+            {
+              label: "# of Correctly masked users",
+              data: [1, 5, 3, 10, 27],
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+              ],
+              borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+              ],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+      const maskoff = document.getElementById("maskoffChart").getContext("2d");
+      const maskoffChart = new Chart(maskoff, {
+        type: "line",
+        data: {
+          labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          datasets: [
+            {
+              label: "# of Unmasked users",
+              data: [3, 6, 2, 10, 7],
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+              ],
+              borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+              ],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+      const maskish = document.getElementById("maskishChart").getContext("2d");
+      const maskishChart = new Chart(maskish, {
+        type: "line",
+        data: {
+          labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          datasets: [
+            {
+              label: "# of Incorrectly masked users",
+              data: [12, 19, 3, 5, 7],
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+              ],
+              borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+              ],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+
+      // Users
+      const user = document.getElementById("userChart").getContext("2d");
+      const userChart = new Chart(user, {
+        type: "pie",
+        data: {
+          labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          datasets: [
+            {
+              data: [12, 19, 3, 20, 30],
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.8)",
+                "rgba(54, 162, 235, 0.8)",
+                "rgba(192, 23, 235, 0.8)",
+               "rgba(255, 170, 0, 0.8)",
+               "rgba(5, 168, 85, 0.8)"
+              ],
+              borderColor: [
+                "rgba(255, 99, 132, 0.8)",
+                "rgba(54, 162, 235, 0.8)",
+                "rgba(192, 23, 235, 0.8)",
+                "rgba(255, 170, 0, 0.8)",
+                "rgba(5, 168, 85, 0.8)"
+              ],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+      const usertime = document.getElementById("usertimeChart").getContext("2d");
+  const usertimeChart = new Chart(usertime, {
+    type: "line",
+    data: {
+      labels: [
+        "8:00",
+        "9:00",
+        "10:00",
+        "11:00",
+        "12:00",
+        "13:00",
+        "14:00",
+        "15:00",
+        "16:00",
+        "17:00",
+        "18:00",
+      ],
+      datasets: [
+        {
+          label: "# of entries",
+          data: [12, 19, 3, 5, 2, 3, 10, 20, 40, 30, 8],
+          backgroundColor: [
+            "rgba(255, 99, 132, 0.6)",
+            "rgba(255, 99, 132, 0.6)",
+            "rgba(255, 99, 132, 0.6)",
+            "rgba(255, 99, 132, 0.6)",
+            "rgba(255, 99, 132, 0.6)",
+            "rgba(255, 99, 132, 0.6)",
+            "rgba(255, 99, 132, 0.6)",
+            "rgba(255, 99, 132, 0.6)",
+            "rgba(255, 99, 132, 0.6)",
+            "rgba(255, 99, 132, 0.6)",
+          ],
+          borderColor: [
+            "rgba(255, 99, 132, 1)",
+            "rgba(255, 99, 132, 1)",
+            "rgba(255, 99, 132, 1)",
+            "rgba(255, 99, 132, 1)",
+            "rgba(255, 99, 132, 1)",
+            "rgba(255, 99, 132, 1)",
+            "rgba(255, 99, 132, 1)",
+            "rgba(255, 99, 132, 1)",
+            "rgba(255, 99, 132, 1)",
+            "rgba(255, 99, 132, 1)",
+            "rgba(255, 99, 132, 1)",
+          ],
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+
+  // Water
+ const water = document.getElementById("waterChart").getContext("2d");
+      const waterChart = new Chart(water, {
+        type: "pie",
+        data: {
+          labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          datasets: [
+          {
+              data: [12, 19, 3, 20, 30],
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.8)",
+                "rgba(54, 162, 235, 0.8)",
+                "rgba(192, 23, 235, 0.8)",
+               "rgba(255, 170, 0, 0.8)",
+               "rgba(5, 168, 85, 0.8)"
+              ],
+              borderColor: [
+                "rgba(255, 99, 132, 0.8)",
+                "rgba(54, 162, 235, 0.8)",
+                "rgba(192, 23, 235, 0.8)",
+                "rgba(255, 170, 0, 0.8)",
+                "rgba(5, 168, 85, 0.8)"
+              ],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+      const watertime = document.getElementById("watertimeChart").getContext("2d");
+      const watertimeChart = new Chart(watertime, {
+        type: "line",
+        data: {
+          labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          datasets: [
+            {
+              label: "# of Correctly masked users",
+              data: [1, 5, 3, 10, 27],
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+                "rgba(255, 99, 132, 0.6)",
+              ],
+              borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+                "rgba(255, 99, 132, 1)",
+              ],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    </script>
+    <script type="text/javascript" src="/JS/main.js"></script>
+    <script type="text/javascript" src="/JS/charts.js"></script>
+  </body>
+</html>

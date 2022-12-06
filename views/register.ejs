@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="sambamanja">
+        <div class="sambamanja-card-left"></div>
+        <div class="sambamanja-card-right">
+          <div class="unza-logo">
+            <div><img class="logo" src="/images/UNZA logo.png" alt="" /></div>
+            <h1>
+              <span class="green">U</span>
+              <span class="red">N</span>
+              <span class="orange">Z</span>
+              <span class="black">A</span> <br> SAMBA MANJA
+            </h1>
+          </div>
+    
+          <div>
+            <form action="" method="POST">
+              <label for="user_name"></label>
+              <input
+                type="text"
+                name="_name"
+                autocomplete="off"
+                id="user_name"
+                placeholder="Enter Username"
+              />
+              <label for="user_email"></label>
+              <label for="user_pass"></label>
+              <input
+                type="password"
+                name="_password"
+                autocomplete="off"
+                id="user_pass"
+                placeholder="Enter Password"
+              />              
+            <% if(typeof msg != 'undefined'){ %>
+            <div class="success-msg"><%= msg %></div>
+            <% } if(typeof error !== 'undefined'){ %>
+            <div class="err-msg"><%= error %></div>
+            <% } %>
+            <input type="submit" value="Sign Up" class="button" />
+            <div class="signup-1">
+              <p class="signup-a">Already have an account?</p>
+              <a class="signup" href="/"
+              >
+              Login</a
+            >
+            </div>
+                </form>
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
+    
+</body>
+</html>

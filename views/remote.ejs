@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UNZA Samba Manja</title>
+
+    <link rel="stylesheet" href="/CSS/main.css" />
+    <link rel="stylesheet" href="/CSS/remote.css" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <link rel="stylesheet" type="text/css" href="loading-bar.css" />
+    <script src="/JS/loading-bar.js"></script>
+    <script type="text/javascript" src="loading-bar.js"></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <div class="logo-name">
+        <div class="logo-image">
+          <img src="/Admin Dashboard Panel/" alt="" />
+        </div>
+        <span class="logo_name"
+          >UNZA <br />
+          Samba Manja</span
+        >
+      </div>
+      <div class="menu-items">
+        <ul class="nav-links">
+          <li>
+            <a href="/home">
+              <i class="uil uil-estate"></i>
+              <span class="link-name">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="/charts">
+              <i class="uil uil-chart-pie"></i>
+              <span class="link-name">Charts</span>
+            </a>
+          </li>
+          <li>
+            <a href="/recents">
+              <i class="uil uil-analytics"></i>
+              <span class="link-name">Recents</span>
+            </a>
+          </li>
+          <li>
+            <a href="/remote">
+              <i class="uil uil-sliders-v-alt"></i>
+              <span class="link-name">Remote Management</span>
+            </a>
+          </li>
+          <li>
+            <a href="/export">
+              <i class="uil uil-file-export"></i>
+              <span class="link-name">Export</span>
+            </a>
+          </li>
+          <li>
+            <a href="/logout">
+              <i class="uil uil-signout"></i>
+              <span class="link-name">Logout</span>
+            </a>
+          </li>
+        </ul>
+        <ul class="logout-mode">
+          <li class="mode">
+            <a href="#">
+              <i class="uil uil-moon"></i>
+              <span class="link-name">Dark Mode</span>
+            </a>
+
+            <div class="mode-toggle">
+              <span class="switch"></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <section class="dashboard">
+      <div class="top">
+        <i class="uil uil-bars sidebar-toggle"></i>
+      </div>
+      <div class="remote-control">
+        <div class="remote">
+          <h1>Sensor Management</h1>
+          <div class="remote-switch">
+            <table>
+              <tr>
+                <td>
+                  <i class="uil uil-camera">Camera sensor</i>
+                  <label class="switch">
+                    <input type="checkbox" />
+                    <span class="slider"></span>
+                  </label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i class="uil uil-temperature-plus">Thermometer sensor</i>
+                  <label class="switch">
+                    <input type="checkbox" />
+                    <span class="slider"></span>
+                  </label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i class="uil uil-user-arrows"
+                    >Ultrasonic sensor 1 <br />
+                    (Soap)</i
+                  >
+                  <label class="switch">
+                    <input type="checkbox" />
+                    <span class="slider"></span>
+                  </label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i class="uil uil-user-arrows"
+                    >Ultrasonic sensor 2 <br />
+                    (Water)</i
+                  >
+                  <label class="switch">
+                    <input type="checkbox" />
+                    <span class="slider"></span>
+                  </label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i class="uil uil-user-arrows"
+                    >Ultrasonic sensor 3 <br />
+                    (Hand sanitiser)</i
+                  >
+                  <label class="switch">
+                    <input type="checkbox" />
+                    <span class="slider"></span>
+                  </label>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="water">
+          <h1>Water Levels</h1>
+          <div
+            class="manzi"
+            id="myItem1"
+            data-preset="bubble"
+            data-pattern-size="50"
+            style="width: 100%; height: 400px"
+            data-max="20"
+          ></div>
+          <script>
+            /* construct manually */
+            var bar1 = new ldBar("#myItem1");
+            /* ldBar stored in the element */
+            var bar2 = document.getElementById("myItem1").ldBar;
+            bar1.set(10);
+          </script>
+        </div>
+        <div class="battery">
+          <h1>Battery Capacity</h1>
+          <div
+            id="battery"
+            class="ldBar"
+            data-img="/Images/battery.svg"
+            data-type="fill"
+            style="width: 100%; height: 400px"
+            data-max="100"
+            data-min="0"
+            data-img-size="500,500"
+          ></div>
+          <script>
+            /* construct manually */
+            var bar1 = new ldBar("#battery");
+            /* ldBar stored in the element */
+            var bar2 = document.getElementById("myItem1").ldBar;
+            bar1.set(50);
+          </script>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script src="/JS/main.js"></script>
+</html>
